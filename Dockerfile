@@ -22,7 +22,7 @@ RUN if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi \
     && if [[ ! -e /usr/bin/python ]]; then ln -sf /usr/bin/python3 /usr/bin/python; fi \
 		&& rm -r /root/.cache
 
-ENV ANSIBLE_HOSTS=/etc/ansible/ec2.py
+ENV ANSIBLE_INVENTORY=/etc/ansible/ec2.py
 ENV EC2_INI_PATH=/etc/ansible/ec2.ini
 
 CMD [ "ansible-playbook", "--version" ]
